@@ -10,6 +10,7 @@ package calculadora;
  *
  * @author egpanades
  */
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Calculadora {
 
@@ -19,6 +20,8 @@ public class Calculadora {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
+        ArrayList list = new ArrayList();
+        int resultado = 0;
         System.out.println("Introduzca el primer numero");
         int num1 = sc.nextInt();
         System.out.println("Introduzca el segundo numero");
@@ -27,19 +30,28 @@ public class Calculadora {
         int operacion = sc.nextInt();
         switch(operacion){
             case 1:
-                System.out.println("El resultado de la suma es " + (num1+num2));
+                resultado = num1+num2;
+                System.out.println("El resultado de la suma es " + (resultado));
+                list.add(resultado);
                 break;
             case 2: 
-                System.out.println("El resultado de la resta es " + (num1-num2));
+                resultado = num1-num2;
+                System.out.println("El resultado de la resta es " + (resultado));
+                list.add(resultado);
                 break;
             case 3:
-                System.out.println("El resultado de la multiplicacion es " + (num1*num2));
+                resultado = num1*num2;
+                System.out.println("El resultado de la multiplicacion es " + (resultado));
+                list.add(resultado);
                 break;
             case 4:
                 if(num2==0)
                     System.out.println("La division por cero no esta definida");
+                
                 else
-                System.out.println("El resultado de la division es " + (num1/num2));
+                    resultado = num1/num2;
+                System.out.println("El resultado de la division es " + (resultado));
+                list.add(resultado);
                 break;
         }
     }
